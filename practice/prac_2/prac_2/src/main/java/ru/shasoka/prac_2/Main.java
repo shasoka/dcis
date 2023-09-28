@@ -2,8 +2,14 @@ package ru.shasoka.prac_2;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/** Класс, содержащий точку входа. */
 public class Main {
 
+    /**
+     * Метод-точка входа.
+     *
+     * @param args аргументы командной строки.
+     */
     public static void main(String[] args) {
         // Инициализация контекста
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
