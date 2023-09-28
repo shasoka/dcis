@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  Указание ссылки на сторонний .properties файл, из которого будут вытягиваться простые значения  -->
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!--  Внедрение простых значений через конструктор  -->
+    <bean id="viewerBean" class="ru.shasoka.prac_2.dependencies.Viewer">
+        <constructor-arg name="name" value="Ivan"/>
+    </bean>
+
+    <!--  Внедрение простых значений из файла через сеттер  -->
+    <bean id="movieBean" class="ru.shasoka.prac_2.dependencies.Movie">
+        <property name="title" value="${movieTitle}"/>
+    </bean>
+
+    <!--  Внедрение простых значений через сеттер  -->
+    <!--  Внедрение зависимостей по ссылке через сеттер в этой работе продемонстрировать не удалось,
+        но этого по заданию и не требовалось :)  -->
+    <bean id="hallBean" class="ru.shasoka.prac_2.dependencies.Hall">
+        <property name="number" value="1"/>
+    </bean>
+
+    <!--  Внедрение зависимостей по ссылке через конструктор  -->
+    <bean id="cinemaBean" class="ru.shasoka.prac_2.Cinema">
+        <constructor-arg name="viewer" ref="viewerBean"/>
+        <constructor-arg name="movie" ref="movieBean"/>
+        <constructor-arg name="hall" ref="hallBean"/>
+    </bean>
+
+    <!--  1. Создается viewerBean с простым значением-именем Иван  -->
+    <!--  2. Создается movieBean с простым значеним-названием Барби  -->
+    <!--  3. Создается hallBean с простым значеним-номером 1 -->
+    <!--  4. Создается cinemaBean со ссылками на уже созданные объекты -->
+
+</beans>
