@@ -22,7 +22,7 @@
 **Вариант 6**. Зависимая сущность: кинотеатр, внедряемые зависимости: зритель, фильм, кинозал.
 
 **Инструкция по сборке и запуску проекта**:
-1. [Загрузите содержимое папки prac_2](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_1);
+1. [Загрузите содержимое папки prac_2](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_2/prac_2);
 2. Проверьте наличие Maven на вашей машине:
 ```
 mvn -v
