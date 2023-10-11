@@ -22,12 +22,12 @@
 **Вариант 6**. Зависимая сущность: кинотеатр, внедряемые зависимости: зритель, фильм, кинозал.
 
 **Инструкция по сборке и запуску проекта**:
-1. [Загрузите содержимое папки prac_3](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_2/prac_2);
+1. [Загрузите содержимое папки prac_3](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_3/prac_3);
 2. Проверьте наличие JDK на вашей машине:
 ```
 java -version
 ```
-3. Находясь в корне проекта (prac_3) запустите исполняемый .jar файл:
+3. Запустите исполняемый .jar файл:
 ```
 java -jar .\target\prac_3.jar
 ```
