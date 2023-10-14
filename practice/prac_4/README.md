@@ -22,7 +22,7 @@
 **Вариант 6**. Сущность: Холодильник.
 
 **Инструкция по сборке и запуску проекта**:
-1. [Загрузите содержимое папки prac_4](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_3/prac_3);
+1. [Загрузите содержимое папки prac_4](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_4);
 2. Проверьте наличие Maven и JDK на вашей машине:
     ```
     mvn -v
