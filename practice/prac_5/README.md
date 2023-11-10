@@ -34,4 +34,5 @@ Web-приложение должно иметь следующие страни
     ```
     java -jar .\target\prac_5-0.0.1-SNAPSHOT.jar
     ```
-5. Победа! ✌️
+5. Идем на [localhost:8080](http://localhost:8080/fridges).
+6. Победа! ✌️
