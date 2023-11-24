@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>Login Form</title>
+</head>
+
+<body class="blue-grey darken-4 white-text">
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col s12 m6 offset-m3 d-flex justify-content-center align-items-center">
+      <div class="card blue-grey darken-4 p-4">
+        <div class="card-content white-text">
+          <h4 class="card-title mb-4">Login</h4>
+
+          <form action="/auth/process_login" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <div class="input-field mb-4 d-flex justify-content-between">
+              <label for="username" class="white-text">Name:</label>
+              <input type="text" id="username" name="username" class="white-text" required>
+            </div>
+
+            <div class="input-field mb-4 d-flex justify-content-between">
+              <label for="password" class="white-text">Password:</label>
+              <input type="password" id="password" name="password" class="white-text" required>
+            </div>
+
+            <!-- Display error message for invalid login -->
+            <div th:if="${param.error}" class="red-text mb-4">
+              <p>Invalid username or password. Please try again.</p>
+            </div>
+
+            <!-- Login and Register buttons -->
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn waves-effect waves-light">Login</button>
+              <a href="/auth/register" class="btn waves-effect waves-light green">Register</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

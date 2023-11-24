@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark-subtle">
+        <div class="container">
+            <a class="navbar-brand fs-2" href="/fridges">Fridges</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex" th:action="@{/fridges}" th:method="get">
+                    <input id="cost" name="cost"
+                            class="form-control me-2" type="search" placeholder="Min cost" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+            </div>
+            <div th:if="${#authorization.expression('isAuthenticated()')}">
+                <span th:text="${#authentication.principal.username}"></span>
+                <span th:with="firstRole=${#authentication.authorities[0].authority.substring(5)}" th:text="${'[' + firstRole + ']'}" style="margin-right: 10px;"></span>
+            </div>
+            <div th:if="${#authorization.expression('isAuthenticated()')}">
+                <form th:action="@{/logout}" method="post" id="logoutForm">
+                    <input type="submit" value="Logout" class="btn btn-outline-secondary" style="margin: 10px;">
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+</body>
+</html>

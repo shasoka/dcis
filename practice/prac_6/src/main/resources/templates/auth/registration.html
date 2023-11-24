@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>Registration Form</title>
+</head>
+
+<body class="blue-grey darken-4 white-text">
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col s12 m6 offset-m3 d-flex justify-content-center align-content-center">
+      <div class="card blue-grey darken-4 p-4">
+        <div class="card-content white-text">
+          <h4 class="card-title mb-4">Registration</h4>
+
+          <form th:action="@{/auth/process_reg}" th:method="post" th:object="${user}">
+            <div class="input-field mb-4 d-flex justify-content-between">
+              <label for="username" class="white-text">Name:</label>
+              <input type="text" id="username" name="username" th:field="*{username}" class="white-text " required>
+              <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="red-text"></span>
+            </div>
+
+            <div class="input-field mb-4 d-flex justify-content-between">
+              <label for="password" class="white-text">Password:</label>
+              <input type="password" id="password" name="password" th:field="*{password}" class="white-text" required>
+              <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="red-text"></span>
+            </div>
+
+            <!-- Registration button -->
+            <button type="submit" class="btn waves-effect waves-light">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
