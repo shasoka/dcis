@@ -20,7 +20,7 @@
 
 **Инструкция по сборке и запуску проекта**:
 > В pom.xml и в логах сборки может фигурировать артефакт prac_5. Все в порядке, просто делал эту работу поверх предыдущей =)
-1. [Загрузите содержимое папки prac_6](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_5);
+1. [Загрузите содержимое папки prac_6](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_6);
 2. Запустите .sql скрипт, который создаст базу данных с одной таблицей, необходимой для работы проекта:
    ```
    psql -U postgres -h localhost -f deploy.sql
