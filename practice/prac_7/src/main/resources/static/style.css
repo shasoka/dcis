@@ -1,0 +1,16 @@
+.add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    text-decoration: none;
+    font-size: 60px;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 1;
+    background-color: grey;
+}
