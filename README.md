@@ -9,4 +9,4 @@
 - [ПР5. Spring MVC](https://github.com/shasoka/dcis/tree/master/practice/prac_5)
 - [ПР6. Spring Security](https://github.com/shasoka/dcis/tree/master/practice/prac_6)
 - [ПР7. Архитектура REST](https://github.com/shasoka/dcis/tree/master/practice/prac_7)
-- ...
+- [ПР8. Spring JMS](https://github.com/shasoka/dcis/tree/master/practice/prac_8)

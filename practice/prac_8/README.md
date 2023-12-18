@@ -17,7 +17,7 @@
 **Вариант 6**. Сущность: Холодильник.
 
 **Инструкция по сборке и запуску проекта**:
-1. [Загрузите содержимое папки prac_8]();
+1. [Загрузите содержимое папки prac_8](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/shasoka/dcis/tree/master/practice/prac_8);
 2. В файле ```src/resources/application.properties``` замените пароль или имя пользователя для подключения приложения к БД (```spring.datasource.password=postgres``` или ```spring.datasource.username=postgres```);
 3. Запустите .sql скрипт, который создаст базу данных с одной таблицей, необходимой для работы проекта:
    ```
