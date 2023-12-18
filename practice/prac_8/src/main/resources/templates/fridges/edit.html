@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Editing ' + ${fridge.getModel()}"></title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+</head>
+<body class="bg-body-secondary">
+<div th:replace="~{fridges/header :: header}"></div>
+<div class="container-sm mt-5">
+    <div class="card bg-dark-subtle w-25 m-auto">
+        <div class="card-body">
+            <form th:action="@{/fridges/{id}(id=${fridge.getId()})}" th:method="PATCH" th:object="${fridge}"
+                  class="d-flex flex-column align-items-center">
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <input type="text" class="form-control" id="model" th:field="*{model}">
+                    <div class="text-danger" th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="prod" class="form-label">Producer</label>
+                    <input type="text" class="form-control" id="prod" th:field="*{prod}">
+                    <div class="text-danger" th:if="${#fields.hasErrors('prod')}" th:errors="*{prod}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="country_prod" class="form-label">Producer country</label>
+                    <input type="text" class="form-control" id="country_prod" th:field="*{country_prod}">
+                    <div class="text-danger" th:if="${#fields.hasErrors('country_prod')}" th:errors="*{country_prod}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="cost" class="form-label">Cost</label>
+                    <input type="text" class="form-control" id="cost" th:field="*{cost}">
+                    <div class="text-danger" th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="volume" class="form-label">Volume</label>
+                    <input type="text" class="form-control" id="volume" th:field="*{volume}">
+                    <div class="text-danger" th:if="${#fields.hasErrors('volume')}" th:errors="*{volume}"></div>
+                </div>
+                <button type="submit" class="btn btn-secondary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

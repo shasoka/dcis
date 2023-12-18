@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fridges</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function showAlert() {
+            alert("You tried to buy new fridge!");
+        }
+    </script>
+</head>
+<body class="bg-body-secondary">
+<div th:replace="~{fridges/header :: header}"></div>
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-6 mb-3" th:each="fridge : ${fridges}">
+            <div class="card bg-dark-subtle">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${fridge.getModel()}"></h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary" th:text="'Producer: ' + ${fridge.getProd()}"></h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary" th:text="'Producer country: ' + ${fridge.getCountry_prod()}"></h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary" th:text="'Cost: ' + ${fridge.getCost()} + '$'"></h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary" th:text="'Volume: ' + ${fridge.getVolume()} + 'm3'"></h6>
+                    <a th:href="@{/fridges/{id}/edit(id=${fridge.getId()})}" class="text-decoration-none">
+                        <button type="button" class="btn btn-secondary">Edit</button>
+                    </a>
+                    <form th:method="DELETE" th:action="@{/fridges/{id}(id=${fridge.getId()})}" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                    <form th:method="PATCH" th:action="@{/fridges/{id}/buy(id=${fridge.getId()})}" class="d-inline">
+                        <button type="submit" class="btn btn-success" onclick="showAlert()">Buy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="fridges/add" class="add-btn">
+    <p>+</p>
+</a>
+</body>
+</html>

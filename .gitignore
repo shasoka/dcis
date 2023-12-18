@@ -3,3 +3,5 @@
 
 *.iml
 *.tar.gz
+
+**/target/
